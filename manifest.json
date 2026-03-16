@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Email Notes Formatter (OxBlue)",
+  "version": "1.3.0",
+  "description": "Formats copied email threads into a clean Notes-friendly format.",
+  "action": {
+    "default_title": "Format for Notes",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "clipboardWrite"],
+  "host_permissions": ["https://mail.google.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
